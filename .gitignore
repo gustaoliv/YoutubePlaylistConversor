@@ -1,3 +1,4 @@
 convertedFiles
 downloadedFiles
 venv
+__pycache__/
