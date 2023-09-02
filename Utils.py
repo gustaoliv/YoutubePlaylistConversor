@@ -12,3 +12,8 @@ def remove_accents(old):
     new = re.sub(r'[òóôõö]', 'o', new)
     new = re.sub(r'[ùúûü]', 'u', new)
     return new
+
+
+def update_progress_bar(current_download, total_files, progress_bar):
+    progress = (current_download) / total_files * 100
+    progress_bar["value"] = progress
