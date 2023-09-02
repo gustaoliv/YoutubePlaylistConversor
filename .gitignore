@@ -2,3 +2,4 @@ convertedFiles
 downloadedFiles
 venv
 __pycache__/
+output/
