@@ -21,7 +21,7 @@ def confirmar():
 
     # Exibir o processo dos dados inseridos no textarea
     textarea.insert(tk.END, "Começando o Download...\n", "success")
-    download_thread = threading.Thread(target=download_playlist, args=(url, download_option, directory))
+    download_thread = threading.Thread(target=download_playlist, args=(url, download_option, directory, textarea))
     download_thread.start()
 
 
@@ -54,7 +54,7 @@ confirmar_button = tk.Button(janela, text="Confirmar", command=confirmar)
 confirmar_button.pack(fill="x", pady=5)
 
 textarea = tk.Text(janela)
-textarea.pack(fill="y")
+textarea.pack(fill="both")
 
 textarea.tag_config("success", foreground="green")
 textarea.tag_config("failed", foreground="red")

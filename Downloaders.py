@@ -68,7 +68,7 @@ def download_playlist_mp4(playlist_url, qualityType, output_folder, textarea):
             continue
 
 
-def download_playlist_as_mpg(playlist_url, output_folder_name, textarea):
+def download_playlist_as_mpg(playlist_url, output_folder, textarea):
     # Get a list of all video URLs in the playlist
     playlist = Playlist(playlist_url)
     if playlist == None:
@@ -85,8 +85,11 @@ def download_playlist_as_mpg(playlist_url, output_folder_name, textarea):
     #generate paths
     downloaded_files_path   = './downloadedFiles/'
 
-    if not os.path.exists(output_folder_name):
-        os.makedirs(output_folder_name)
+    output_folder_name = remove_accents(str(playlist.title).replace(" ", "_").replace("-", "_").replace("__", "_").title()).strip()
+
+    full_path = os.path.join(output_folder, "MPG_" + output_folder_name)
+    if not os.path.exists(full_path):
+        os.makedirs(full_path)
 
     # The 'i' variable will make that the files has the same order that they have in the playlist
     i = 0
@@ -113,7 +116,7 @@ def download_playlist_as_mpg(playlist_url, output_folder_name, textarea):
                 clip = VideoFileClip(input_file_path)
                 i += 1
                 fileIndex = "{:03d}".format(i)
-                output_file_path = os.path.join(output_folder_name, fileIndex + "_" + file).replace('.mp4', '.mpg')
+                output_file_path = os.path.join(full_path, fileIndex + "_" + file).replace('.mp4', '.mpg')
 
                 if not os.path.exists(output_file_path):
                     # Make the conversion
