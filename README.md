@@ -29,8 +29,11 @@
 
 ## :dart: Sobre ##
 
-Sempre precisava baixar algumas músicas para colocar no pendrive do carro, e sempre achei mais fácil pegar uma playlist pronta do Youtube, mas os conversores para MP3 nunca funcionavam direito.
-Resolvi escrever um pequeno algoritmo que resolvesse esse problema.
+Sempre precisava baixar algumas músicas para colocar no pendrive do carro, e sempre achei mais fácil pegar uma playlist pronta do Youtube, mas os sites disponiveis  nunca funcionavam direito.
+Resolvi escrever um pequeno software que resolvesse esse problema.
+
+![print](images/print.png)
+
 
 ## :rocket: Tecnologias ##
 
